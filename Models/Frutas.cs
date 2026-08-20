@@ -7,6 +7,5 @@ namespace AulaBackend_API.Models
         public string Cor { get; set; }
         public decimal Preco { get; set; }
 
-
     }
 }

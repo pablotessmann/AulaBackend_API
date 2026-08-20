@@ -10,6 +10,6 @@ namespace AulaBackend_API.Data
         {
         }
 
-        public DbSet<Fruta> Frutas { get; set; }
+        public DbSet<Fruta> Fruta { get; set; }
     }
 }

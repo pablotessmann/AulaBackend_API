@@ -19,7 +19,7 @@ namespace AulaBackend_API.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Fruta>>> Get()
         {
-            var frutas = await _context.Frutas.ToListAsync();
+            var frutas = await _context.Fruta.ToListAsync();
 
             return Ok(frutas);
         }
