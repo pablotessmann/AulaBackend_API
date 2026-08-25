@@ -1,0 +1,17 @@
+Como objetivo, desenvolver APIs em C#, utilizando MySQL, para gerenciamento de uma fruteira.
+Modelar um banco de dados para a necessidade abaixo:
+
+cadastrar produtos/frutas;
+consultar produtos;
+alterar produtos;
+excluir produtos;
+cadastrar categorias;
+controlar estoque;
+registrar clientes;
+registrar vendas;
+consultar os itens vendidos;
+calcular o valor total de uma venda;
+
+O desenvolvimento deverá ser em dupla. E somente 1 trio.
+
+A solução do problema deverá ser disponibilizada no git e informada.
