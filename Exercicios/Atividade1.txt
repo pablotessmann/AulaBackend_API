@@ -1,5 +1,11 @@
-Como objetivo, desenvolver APIs em C#, utilizando MySQL, para gerenciamento de uma fruteira.
-Modelar um banco de dados para a necessidade abaixo:
+Como forma de avaliar o uso de conceitos vistos em aula, as duplas (trio), devem realizar APIs em C#, utilizando MySQL, para gerenciamento de uma fruteira.
+
+O desenvolvimento deverá ser em dupla. E somente 1 trio.
+
+Requisitos:
+- Modelar um banco de dados para a necessidade abaixo
+- Mostrar na forma de script SQL a estrutura de criação das tabelas, script de popular as tabelas (mínimo de 10 registros em cada tabela)
+- Montar endpoints para:
 
 cadastrar produtos/frutas;
 consultar produtos;
@@ -12,6 +18,10 @@ registrar vendas;
 consultar os itens vendidos;
 calcular o valor total de uma venda;
 
-O desenvolvimento deverá ser em dupla. E somente 1 trio.
+A solução do problema deverá ser disponibilizada no git e informada no dia da apresentação.
+Como método de avaliação, será pego o projeto no git, onde deve conter a documentação para a execução do mesmo.
+Para o SQL, será avaliado individualmente no computador no dia da apresentação.
 
-A solução do problema deverá ser disponibilizada no git e informada.
+Data: 21/09/2026
+
+Este projeto será utilizado para o próximo tema de estudo (WinForms) da turma.
