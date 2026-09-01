@@ -10,5 +10,8 @@ namespace AulaBackend_API.Models
         public string Endereco { get; set; }
         public string Cidade  { get; set; }
         public string Estado { get; set; }
+
+        public ICollection<Pedido> Pedidos { get; set; }
+            = new List<Pedido>();
     }
 }
