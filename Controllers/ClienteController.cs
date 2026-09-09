@@ -1,4 +1,5 @@
 using AulaBackend_API.Data;
+using AulaBackend_API.DTOs;
 using AulaBackend_API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,12 +17,50 @@ namespace AulaBackend_API.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cliente>>> Get()
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Cliente>> GetCliente(int id)
         {
-            var clientes = await _context.Cliente.ToListAsync();
+            var cliente = await _context.Cliente.FindAsync(id);
 
-            return Ok(clientes);
+            if (cliente == null)
+            {
+                return NotFound();
+            }
+
+            return cliente;
+        }
+
+        // POST: api/Cliente
+        // Cadastrar cliente
+        [HttpPost]
+        public async Task<ActionResult<Cliente>> PostProduto(ClienteRequest request)
+        {
+            // Remove tudo que não for número
+            string cpfLimpo = new string(
+                request.Cpf.Where(char.IsDigit).ToArray()
+            );
+            // Converte para inteiro
+            int cpf = int.Parse(cpfLimpo);
+            var cliente = new Cliente
+            {
+                Nome = request.Nome,
+                Email = request.Email,
+                Telefone = request.Telefone,
+                Cpf = cpf,
+                Endereco = request.Endereco,
+                Cidade = request.Cidade,
+                Estado = request.Estado,
+            };
+
+            _context.Cliente.Add(cliente);
+
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(
+                nameof(GetCliente),
+                new { id = cliente.Id },
+                cliente
+            );
         }
     }
 }
