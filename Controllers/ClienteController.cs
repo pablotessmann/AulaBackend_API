@@ -17,12 +17,17 @@ namespace AulaBackend_API.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Cliente>>> Get()
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Cliente>> GetCliente(int id)
         {
-            var clientes = await _context.Cliente.ToListAsync();
+            var cliente = await _context.Cliente.FindAsync(id);
 
-            return Ok(clientes);
+            if (cliente == null)
+            {
+                return NotFound();
+            }
+
+            return cliente;
         }
 
         // POST: api/Cliente
@@ -47,14 +52,14 @@ namespace AulaBackend_API.Controllers
                 Estado = request.Estado,
             };
 
-            _context.Produto.Add(cliente);
+            _context.Cliente.Add(cliente);
 
             await _context.SaveChangesAsync();
 
             return CreatedAtAction(
-                nameof(GetProduto),
-                new { id = produto.Id },
-                produto
+                nameof(GetCliente),
+                new { id = cliente.Id },
+                cliente
             );
         }
     }

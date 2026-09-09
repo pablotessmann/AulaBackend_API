@@ -13,7 +13,7 @@ SELECT id, nome, cor, preco
 FROM abcdef_aula.Fruta;
 
 -- Criação da tabela: Clientes
-CREATE TABLE Clientes (
+CREATE TABLE Cliente (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(150) NOT NULL UNIQUE,
@@ -25,7 +25,7 @@ CREATE TABLE Clientes (
 );
 
 -- Criação da tabela: Produtos
-CREATE TABLE Produtos (
+CREATE TABLE Produto (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(150) NOT NULL,
     descricao TEXT,
@@ -35,7 +35,7 @@ CREATE TABLE Produtos (
 );
 
 -- Criação da tabela: Pedidos
-CREATE TABLE Pedidos (
+CREATE TABLE Pedido (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_cliente INT NOT NULL,
     id_produto INT NOT NULL,
@@ -45,11 +45,11 @@ CREATE TABLE Pedidos (
 
     CONSTRAINT fk_pedido_cliente
         FOREIGN KEY (id_cliente)
-        REFERENCES Clientes(id),
+        REFERENCES Cliente(id),
 
     CONSTRAINT fk_pedido_produto
         FOREIGN KEY (id_produto)
-        REFERENCES Produtos(id),
+        REFERENCES Produto(id),
         
 	CONSTRAINT fk_pedido_estado
 		FOREIGN KEY (id_estado)
@@ -66,3 +66,7 @@ CREATE TABLE Estado (
 INSERT INTO abcdef_aula.Cliente
 (nome, email, telefone, cpf, endereco, cidade, estado)
 VALUES('João Silva', 'joao@gmail.com', '5199986554', '12345678910', 'Rua Marechal Deodoro, 99', 'Santa Cruz do Sul', 'RS');
+
+INSERT INTO abcdef_aula.Produto
+(nome, descricao, preco, estoque, ativo)
+VALUES('Banana', 'Penca de 6', 1.10, 5, 'A');
