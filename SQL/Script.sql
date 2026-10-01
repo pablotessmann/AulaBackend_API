@@ -70,3 +70,7 @@ VALUES('João Silva', 'joao@gmail.com', '5199986554', '12345678910', 'Rua Marech
 INSERT INTO abcdef_aula.Produto
 (nome, descricao, preco, estoque, ativo)
 VALUES('Banana', 'Penca de 6', 1.10, 5, 'A');
+
+INSERT INTO abcdef_aula.Categoria
+(id, descricao)
+VALUES(0, 'Neutras');

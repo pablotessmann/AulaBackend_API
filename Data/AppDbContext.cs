@@ -17,6 +17,7 @@ namespace AulaBackend_API.Data
             );
         }
 
+        public DbSet<Categoria> Categoria { get; set; }
         public DbSet<Fruta> Fruta { get; set; }
         public DbSet<Cliente> Cliente { get; set; }
         public DbSet<Produto> Produto { get; set; }
