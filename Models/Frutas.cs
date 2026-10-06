@@ -2,13 +2,13 @@ namespace AulaBackend_API.Models
 {
     public class Fruta
     {
-        public int Id { get; set; }
-        public string Nome { get; set; }
-        public decimal? Preco { get; set; }
-        public int? Quantidade { get; set; }
-        public string Categoria { get; set; }
-        public DateTime? DataValidade { get; set; }
-        public string? HashImg { get; set; }
+        public int id { get; set; }
+        public string nome { get; set; }
+        public decimal? preco { get; set; }
+        public int? quantidade { get; set; }
+        public int id_categoria { get; set; }
+        public DateTime? data_validade { get; set; }
+        public string? hash_img { get; set; }
 
     }
 }

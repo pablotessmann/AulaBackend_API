@@ -7,21 +7,21 @@ namespace AulaBackend_API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class FrutaController : ControllerBase
+    public class CategoriaController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public FrutaController(AppDbContext context)
+        public CategoriaController(AppDbContext context)
         {
             _context = context;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Fruta>>> Get()
+        public async Task<ActionResult<IEnumerable<Categoria>>> Get()
         {
-            var frutas = await _context.Fruta.ToListAsync();
+            var categorias = await _context.Categoria.ToListAsync();
 
-            return Ok(frutas);
+            return Ok(categorias);
         }
     }
 }
